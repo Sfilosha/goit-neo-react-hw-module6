@@ -8,6 +8,7 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 const persistConfig = {
   key: "contacts",
   storage,
+  whitelist: ["items"],
 };
 
 const contactsPersisted = persistReducer(persistConfig, contactsReducer);
