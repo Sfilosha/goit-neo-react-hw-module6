@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import intitialContacts from "../data/contacts.json";
-import { useSelector } from "react-redux";
 
 const contactsSlice = createSlice({
   // Ім'я слайсу
