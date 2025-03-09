@@ -3,13 +3,15 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { useSelector } from "react-redux";
+import { selectContacts } from "./redux/contactsSlice";
+import { selectNameFilter } from "./redux/filtersSlice";
 
 function App() {
-  const selectContacts = useSelector((state) => state.contacts.items);
-  const selectNameFilter = useSelector((state) => state.filters.name);
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectNameFilter);
 
-  const filteredContacts = selectContacts.filter((el) => {
-    return el.name.toLowerCase().includes(selectNameFilter.toLowerCase());
+  const filteredContacts = contacts.filter((el) => {
+    return el.name.toLowerCase().includes(filter.toLowerCase());
   });
 
   return (

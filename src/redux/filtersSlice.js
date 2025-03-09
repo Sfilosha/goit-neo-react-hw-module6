@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 
 const filtersSlice = createSlice({
   // Ім'я слайсу
@@ -20,3 +21,6 @@ export const { changeFilter } = filtersSlice.actions;
 
 // Редюсер слайсу
 export const filtersReducer = filtersSlice.reducer;
+
+// Selector
+export const selectNameFilter = (state) => state.filters.name;
