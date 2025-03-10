@@ -1,8 +1,17 @@
 import css from "./Contact.module.css";
 import PersonIcon from "@mui/icons-material/Person";
 import PhoneIcon from "@mui/icons-material/Phone";
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsSlice";
 
-function Contact({ data: { name, phone, id }, onDelete }) {
+function Contact({ data: { name, phone, id } }) {
+  const dispatch = useDispatch();
+
+  const removeContact = (payload) => {
+    dispatch(deleteContact(payload));
+    console.log(payload);
+  };
+
   return (
     <>
       <ul className={css.contactDetailsList}>
@@ -18,7 +27,7 @@ function Contact({ data: { name, phone, id }, onDelete }) {
       <button
         className={css.buttonRed}
         type="button"
-        onClick={() => onDelete(id)}
+        onClick={() => removeContact(id)}
       >
         Delete
       </button>
