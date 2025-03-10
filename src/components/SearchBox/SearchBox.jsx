@@ -21,7 +21,6 @@ function SearchBox() {
           value={filter}
           onChange={(e) => {
             dispatch(changeFilter(e.target.value));
-            console.log(e.target.value);
           }}
         />
       </div>

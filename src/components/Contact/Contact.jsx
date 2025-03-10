@@ -9,7 +9,7 @@ function Contact({ data: { name, phone, id } }) {
 
   const removeContact = (payload) => {
     dispatch(deleteContact(payload));
-    console.log(payload);
+    // console.log(payload);
   };
 
   return (
